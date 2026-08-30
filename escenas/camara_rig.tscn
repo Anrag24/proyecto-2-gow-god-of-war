@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bfyhtsqiwgtr7"]
+
+[ext_resource type="Script" uid="uid://cyb10kiaq2v50" path="res://scripts/camara_rig.gd" id="1_script"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_arm"]
+
+[node name="CamaraRig" type="Node3D" unique_id=1093154360]
+script = ExtResource("1_script")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=904441537]
+shape = SubResource("SphereShape3D_arm")
+spring_length = 4.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=773514303]

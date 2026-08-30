@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bi7vnjammep6o"]
+
+[ext_resource type="PackedScene" uid="uid://8goefylx10lf" path="res://modelos/kratos/Kratos.glb" id="1_yg3mj"]
+[ext_resource type="Script" uid="uid://bsl0krpbihysx" path="res://scripts/kratos.gd" id="3_script"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yg3mj"]
+
+[node name="Kratos" type="CharacterBody3D" unique_id=1452868527]
+script = ExtResource("3_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=724019418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_yg3mj")
+
+[node name="kratos" parent="." unique_id=66033113 instance=ExtResource("1_yg3mj")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0)
+
+[node name="Armature" parent="kratos" index="0" unique_id=1954900401]
+transform = Transform3D(0.0099887, 8.38327e-05, 0.0004677961, 0.00047524858, -0.0017619829, -0.009832068, 0, 0.00984319, -0.0017639761, 0, -0.15306708, 0)
+
+[node name="AnimationPlayer" parent="kratos" index="1" unique_id=1259080949]
+root_motion_track = NodePath("Armature/Skeleton3D:mixamorig_Hips")
+
+[editable path="kratos"]
